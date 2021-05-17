@@ -1,7 +1,5 @@
-package Student;
-
+package student;
 import java.util.*;
-
 public class SMTest {
   static StudentManager[] StudentManager=new StudentManager[21];
   static  int number=0;
@@ -9,7 +7,6 @@ public class SMTest {
 
 public static void main(String args[]){
   int choice;
-
   System.out.println("请选择操作：");
   while(true){
   System.out.println("*******************************************");  
@@ -24,12 +21,12 @@ public static void main(String args[]){
   choice=scanner.nextInt();
   if(choice==7)break;
   switch(choice){
-  case 1:     add(); break;
-  case 2:     show();break;
-  case 3:     change();break;
-  case 4:     delete();break;
-  case 5:     paixu();break;
-  case 6:     query();break;
+  case 1:     add(); break;//添加学生信息
+  case 2:     show();break;//查询学生信息
+  case 3:     change();break;//修改学生信息
+  case 4:     delete();break;//删除学生信息
+  case 5:     paixu();break;//对学生信息进行排序
+  case 6:     query();break;//查询学生信息
   }       
 }
   System.out.println("感谢您对本系统的使用，欢迎下次继续使用");
@@ -109,8 +106,8 @@ static void query(){
 static void delete(){
   System.out.println("请输入要删除信息的学生学号");
   String Stunumber=scanner.next();
-  int i;
-      for( i=0;i<number;i++)
+      int i;
+      for(  i=0;i<number;i++)
       if(Stunumber.equals(StudentManager[i].getStuNum()))break;
       if(number==i)System.out.println("对不起查无此人");
   for(;i<number-1;i++)
